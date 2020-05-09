@@ -1,0 +1,2 @@
+rootProject.name='WMA'
+include ':app'
