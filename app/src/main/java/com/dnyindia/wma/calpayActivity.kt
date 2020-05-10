@@ -20,7 +20,7 @@ class calpayActivity : AppCompatActivity(){
         var dBase: SQLiteDatabase = openOrCreateDatabase(
             "history",
             Context.MODE_PRIVATE, null)
-        dBase.execSQL("create table if not exists log(name varchar(50),contact varchar(50),address varchar(50),amount varchar(50))")
+        dBase.execSQL("create table if not exists log(_id integer primary key  autoincrement, name varchar(50),contact varchar(50),address varchar(50),amount varchar(50))")
 
 
 
