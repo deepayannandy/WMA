@@ -32,9 +32,8 @@ class MainActivity : AppCompatActivity() {
         Logs.setOnClickListener{
 
             var c:Cursor= dBase.query("log", null,null,null,null,null,null)
-            Toast.makeText(this, c.toString(), Toast.LENGTH_LONG).show()
-            var cAdapter = SimpleCursorAdapter(
-                this,R.layout.row, c, arrayOf("name","contact","address","amount"), intArrayOf(R.id.title_name,R.id.text_contact,R.id.text_address,R.id.text_amount),0)
+            Toast.makeText(this@MainActivity, c.toString(), Toast.LENGTH_LONG).show()
+            var cAdapter = SimpleCursorAdapter(this@MainActivity,R.layout.row, c, arrayOf("name","contact","address","amount"), intArrayOf(R.id.title_name,R.id.text_contact,R.id.text_address,R.id.text_amount),0)
 
             list_data.adapter = cAdapter
         }
