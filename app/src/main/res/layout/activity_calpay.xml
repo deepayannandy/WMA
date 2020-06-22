@@ -76,7 +76,6 @@
                 android:layout_height="match_parent"
                 android:layout_weight=".7"
                 android:hint="Enter the weight"
-                android:inputType="number"
                 android:text="0"
                 android:textAlignment="center"
                 android:textColor="#C13636"
@@ -98,18 +97,17 @@
                 android:textAlignment="center"
                 android:textSize="25dp"
                 ></TextView>
+
             <EditText
-                android:layout_width="0dp"
-                android:layout_weight=".7"
-                android:textAlignment="center"
-                android:layout_height="match_parent"
-                android:textSize="30dp"
-                android:text="0"
-                android:inputType="number"
-                android:hint="Enter the weight"
-                android:textColor="#C13636"
                 android:id="@+id/wet"
-                ></EditText>
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".7"
+                android:hint="Enter the weight"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="#C13636"
+                android:textSize="30dp"></EditText>
 
         </LinearLayout>
         <LinearLayout
@@ -127,18 +125,17 @@
                 android:textAlignment="center"
                 android:textSize="25dp"
                 ></TextView>
+
             <EditText
-                android:layout_width="0dp"
-                android:layout_weight=".7"
-                android:textAlignment="center"
-                android:layout_height="match_parent"
-                android:textSize="30dp"
-                android:inputType="number"
-                android:text="0"
-                android:hint="Enter the weight"
-                android:textColor="#C13636"
                 android:id="@+id/metal"
-                ></EditText>
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".7"
+                android:hint="Enter the weight"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="#C13636"
+                android:textSize="30dp"></EditText>
 
         </LinearLayout>
         <LinearLayout
@@ -156,18 +153,17 @@
                 android:textAlignment="center"
                 android:textSize="25dp"
                 ></TextView>
+
             <EditText
-                android:layout_width="0dp"
-                android:layout_weight=".7"
-                android:textAlignment="center"
-                android:layout_height="match_parent"
-                android:textSize="30dp"
-                android:text="0"
-                android:hint="Enter the weight"
-                android:textColor="#C13636"
-                android:inputType="number"
                 android:id="@+id/glass"
-                ></EditText>
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".7"
+                android:hint="Enter the weight"
+                android:text="0"
+                android:textAlignment="center"
+                android:textColor="#C13636"
+                android:textSize="30dp"></EditText>
 
         </LinearLayout>
         <LinearLayout

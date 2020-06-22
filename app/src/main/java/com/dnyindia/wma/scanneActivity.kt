@@ -47,7 +47,8 @@ class scanneActivity : AppCompatActivity(), ZXingScannerView.ResultHandler {
         resp.text= rawResult!!.text
 
         val intent= Intent(this,calpayActivity::class.java)
-        intent.putExtra("user_data",rawResult!!.text)
+        intent.putExtra("user_data",rawResult.text)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
         startActivity(intent)
     }
 }

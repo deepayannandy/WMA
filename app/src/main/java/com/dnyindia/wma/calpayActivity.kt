@@ -9,6 +9,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.dnyindia.wma.utils.DatabaseHelper
 import kotlinx.android.synthetic.main.activity_calpay.*
 
 
@@ -34,6 +35,7 @@ class calpayActivity : AppCompatActivity(){
 
 
 
+        // calculation part
         totalcal.setOnClickListener(){
             val d: String =dry.text.toString()
             val w: String =wet.text.toString()
@@ -43,22 +45,20 @@ class calpayActivity : AppCompatActivity(){
             total.text=t.toString()+" Rs. Only"
             amount= t.toDouble()
         }
+
+        // saving the details and return to the main activity
         pay.setOnClickListener {
 
-            var cv = ContentValues( )
-            cv.put("name",data[0])
-            cv.put("Contact",data[2])
-            cv.put("address",data[3])
-            cv.put("amount",amount.toString())
-            var status:Long = dBase.insert("log",
-                null, cv)
-            if(status != -1L){
-                Toast.makeText(this, "Record Inserted Successfully", Toast.LENGTH_LONG).show()
-            }else{
-                Toast.makeText(this, "Record insertion  is failed..", Toast.LENGTH_LONG).show()
-            }
-            dBase.close()
-            val intent=Intent(this,MainActivity::class.java)
+            val username = data[0] + "\n"
+            val contact1 = data[2] + "\n"
+            val address1 = data[3] + "\n"
+            var dbHelper = DatabaseHelper(this)
+            dbHelper.insertData(username,contact1,address1,amount.toString())
+
+            val webstr= "https://script.google.com/macros/s/AKfycbxhT1JwYHymHef4-bkyNw2SBVElMlfMQkRmUNh-uEPuif-UHD17/exec?id=1N2veXBR2N7cVwZj2AqViG-rI1f8hrpU0DRS7E10xOU0&U_id="+" &"+"name="+username+"&contact_no="+contact1+"&address="+address1+"&amountD="+amount.toString()+"&U_id="+"1"
+            val intent= Intent(this,webacctivity::class.java)
+            intent.putExtra("link",webstr)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
             startActivity(intent)
 
         }
